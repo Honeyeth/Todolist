@@ -10,7 +10,6 @@ function App() {
   });
   const [editIndex, setEditIndex] = useState(null);
 
-  // ✅ Save to localStorage whenever list/completed changes
   useEffect(() => {
     localStorage.setItem("todoList", JSON.stringify(list));
     localStorage.setItem("completedList", JSON.stringify(completed));
@@ -95,10 +94,12 @@ function App() {
               padding: "14px 18px",
               fontSize: "18px",
               borderRadius: "14px",
-              background: "rgba(255,255,255,0.15)",
-              color: "#fff",
-              border: "1px solid rgba(255,255,255,0.3)",
+              background: "linear-gradient(135deg, #1f4037, #99f2c8)", // 💚 gradient
+              color: "#000",
+              fontWeight: "600",
+              border: "none",
               outline: "none",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
             }}
             placeholder="✍️ Enter your task..."
             value={item}
@@ -110,11 +111,12 @@ function App() {
             style={{
               fontSize: "18px",
               borderRadius: "14px",
-              backgroundColor: "#10a37f",
+              background: "linear-gradient(135deg, #ff6a00, #ee0979)", // 🔥 gradient
               border: "none",
               color: "#fff",
               fontWeight: "600",
               transition: "0.3s",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.4)",
             }}
           >
             {editIndex !== null ? "✏️ Update Task" : "➕ Add Task"}
